@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:~/.local/bin:~/.cargo/bin
+export PATH=$PATH:~/.local/bin:~/.cargo/bin:~/go/bin:
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -99,6 +99,10 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
+
+
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+export FZF_DEFAULT_COMMAND="fd --type f"
 
 alias vim="nvim"
 alias dev="cd ~/dev"
