@@ -1,200 +1,1399 @@
-alsa-firmware 1.2.4-3
-alsa-utils 1.2.10-1
-baobab 45.0-1
-base 3-2
-base-devel 1-1
-blueberry 1.4.8-1
-bluez-utils 5.72-2
-bottom 0.9.6-1
-brave-bin 1:1.61.120-1
-codeblocks 20.03-5
-dmenu 5.2-1
-efibootmgr 18-2
-epiphany 45.2-1
-evince 45.0-1
-expac 10-5
-feh 3.10.2-1
-fprintd 1.94.2-2
-fzf 0.46.1-1
-gdm 45.0.1-1
-gdu 5.25.0-1
-git 2.43.0-1
-git-credential-manager 2.4.1-1
-gnome-backgrounds 45.0-1
-gnome-calculator 45.0.2-1
-gnome-calendar 45.1-1
-gnome-characters 45.0-1
-gnome-clocks 45.0-1
-gnome-color-manager 3.36.0+r51+gcf7ee2b5-1
-gnome-connections 45.0-1
-gnome-console 45.0-1
-gnome-contacts 45.0-1
-gnome-control-center 45.2-2
-gnome-disk-utility 45.1-1
-gnome-font-viewer 45.0-1
-gnome-keyring 1:42.1-3
-gnome-logs 45beta-1
-gnome-maps 45.3-1
-gnome-menus 3.36.0-2
-gnome-music 1:45.0-1
-gnome-remote-desktop 45.1-1
-gnome-session 45.0-1
-gnome-settings-daemon 45.1-1
-gnome-shell 1:45.3-1
-gnome-shell-extensions 45.2-1
-gnome-software 45.3-1
-gnome-system-monitor 45.0.2-1
-gnome-text-editor 45.3-1
-gnome-tour 45.0-1
-gnome-tweaks 45.0-1
-gnome-user-docs 45.1-1
-gnome-user-share 43.0-1
-gnome-weather 45.0-1
-go 2:1.21.6-1
-google-chrome 120.0.6099.224-1
-grilo-plugins 1:0.3.16-1
-grub 2:2.12-1
-gucharmap 15.1.1-1
-gvfs 1.52.2-2
-gvfs-afc 1.52.2-2
-gvfs-goa 1.52.2-2
-gvfs-google 1.52.2-2
-gvfs-gphoto2 1.52.2-2
-gvfs-mtp 1.52.2-2
-gvfs-nfs 1.52.2-2
-gvfs-smb 1.52.2-2
-htop 3.3.0-1
-i3-resurrect 1.4.5-1
-i3-wm 4.23-1
-i3blocks 1.5-4
-i3lock 2.14.1-1
-i3status 2.14-1
-intel-media-driver 24.1.2-1
-intel-ucode 20231114-2
-iwd 2.13-4
-kbd-br-thinkpad 1.0-1
-lazygit 0.40.2-1
-less 1:643-1
-libva-intel-driver 2.4.1-2
-lightdm 1:1.32.0-5
-lightdm-gtk-greeter 1:2.0.8-3
-linux 6.7.3.arch1-1
-linux-firmware 20240115.9b6d0b08-2
-loupe 45.3-1
-lshw B.02.20-1
-malcontent 0.11.1-4
-nano 7.2-1
-nautilus 45.2.1-1
-neofetch 7.1.0-2
-neovim 0.9.5-2
-neovim-nvim-treesitter 0.9.2-1
-network-manager-applet 1.36.0-1
-networkmanager 1.44.2-3
-nitrogen 1.6.1-4
-npm 10.4.0-2
-orca 45.2-1
-os-prober 1.81-1
-otf-aurulent-nerd 3.1.1-1
-otf-codenewroman-nerd 3.1.1-1
-otf-comicshanns-nerd 3.1.1-1
-otf-commit-mono-nerd 3.1.1-1
-otf-droid-nerd 3.1.1-1
-otf-firamono-nerd 3.1.1-1
-otf-geist-mono-nerd 3.1.1-1
-otf-hasklig-nerd 3.1.1-1
-otf-hermit-nerd 3.1.1-1
-otf-monaspace-nerd 3.1.1-1
-otf-opendyslexic-nerd 3.1.1-1
-otf-overpass-nerd 3.1.1-1
-pipewire-alsa 1:1.0.3-1
-pipewire-jack 1:1.0.3-1
-pipewire-pulse 1:1.0.3-1
-polybar 3.7.1-1
-powertop 2.15-1
-pyright 1.1.349-1
-python-beautifulsoup4 4.12.2-1
-python-pynvim 0.5.0-2
-ripgrep 14.1.0-1
-rofi 1.7.5-2
-rofi-power-menu 3.1.0-1
-rygel 1:0.42.5-1
-simple-scan 44.0-2
-smartmontools 7.4-1
-snapshot 45.2-1
-sof-firmware 2023.12-1
-stow 2.3.1-3
-sushi 45.0-1
-tecla 45.0-1
-tmux 3.3_a-7
-totem 43.0-2
-tracker3-miners 3.6.2-2
-ttf-0xproto-nerd 3.1.1-1
-ttf-3270-nerd 3.1.1-1
-ttf-agave-nerd 3.1.1-1
-ttf-anonymouspro-nerd 3.1.1-1
-ttf-arimo-nerd 3.1.1-1
-ttf-bigblueterminal-nerd 3.1.1-1
-ttf-bitstream-vera-mono-nerd 3.1.1-1
-ttf-cascadia-code-nerd 3.1.1-1
-ttf-cascadia-mono-nerd 3.1.1-1
-ttf-cousine-nerd 3.1.1-1
-ttf-d2coding-nerd 3.1.1-1
-ttf-daddytime-mono-nerd 3.1.1-1
-ttf-dejavu-nerd 3.1.1-1
-ttf-envycoder-nerd 3.1.1-1
-ttf-fantasque-nerd 3.1.1-1
-ttf-firacode-nerd 3.1.1-1
-ttf-font-awesome 6.5.1-1
-ttf-go-nerd 3.1.1-1
-ttf-hack-nerd 3.1.1-1
-ttf-heavydata-nerd 3.1.1-1
-ttf-iawriter-nerd 3.1.1-1
-ttf-ibmplex-mono-nerd 3.1.1-1
-ttf-inconsolata-go-nerd 3.1.1-1
-ttf-inconsolata-lgc-nerd 3.1.1-1
-ttf-inconsolata-nerd 3.1.1-1
-ttf-intone-nerd 3.1.1-1
-ttf-iosevka-nerd 3.1.1-1
-ttf-iosevkaterm-nerd 3.1.1-1
-ttf-jetbrains-mono-nerd 3.1.1-1
-ttf-lekton-nerd 3.1.1-1
-ttf-liberation-mono-nerd 3.1.1-1
-ttf-lilex-nerd 3.1.1-1
-ttf-martian-mono-nerd 3.1.1-1
-ttf-meslo-nerd 3.1.1-1
-ttf-monofur-nerd 3.1.1-1
-ttf-monoid-nerd 3.1.1-1
-ttf-mononoki-nerd 3.1.1-1
-ttf-mplus-nerd 3.1.1-1
-ttf-nerd-fonts-symbols 3.1.1-1
-ttf-nerd-fonts-symbols-mono 3.1.1-1
-ttf-noto-nerd 3.1.1-1
-ttf-profont-nerd 3.1.1-1
-ttf-proggyclean-nerd 3.1.1-1
-ttf-roboto-mono-nerd 3.1.1-1
-ttf-sharetech-mono-nerd 3.1.1-1
-ttf-sourcecodepro-nerd 3.1.1-1
-ttf-space-mono-nerd 3.1.1-1
-ttf-terminus-nerd 3.1.1-1
-ttf-tinos-nerd 3.1.1-1
-ttf-ubuntu-mono-nerd 3.1.1-1
-ttf-ubuntu-nerd 3.1.1-1
-ttf-victor-mono-nerd 3.1.1-1
-vim 9.1.0000-1
-vulkan-intel 1:23.3.5-1
-wezterm 20240128.202157.1e552d76-1
-wget 1.21.4-1
-wireless_tools 30.pre9-3
-wireplumber 0.4.17-1
-xautolock 2.2-6
-xclip 0.13-4
-xdg-desktop-portal-gnome 45.1-1
-xdg-user-dirs-gtk 0.11-2
-xdg-utils 1.2.0+1+gaf2fe0d-1
-xorg-xinit 1.4.2-1
-xsel 1.2.1-1
-xterm 389-1
-yay-bin 12.2.0-1
-yelp 42.2-2
-zram-generator 1.1.2-1
-zsh 5.9-4
+aalib
+abseil-cpp
+accountsservice
+acl
+acpid
+adobe-source-code-pro-fonts
+adw-gtk-theme
+adwaita-cursors
+adwaita-fonts
+adwaita-icon-theme
+adwaita-icon-theme-legacy
+alsa-card-profiles
+alsa-firmware
+alsa-lib
+alsa-topology-conf
+alsa-ucm-conf
+alsa-utils
+aom
+apache
+appstream
+apr
+apr-util
+arandr
+archlinux-appstream-data
+archlinux-keyring
+argon2
+arpack
+asciidoc
+at-spi2-core
+atkmm
+attr
+audit
+autoconf
+autoconf-archive
+automake
+autorandr
+avahi
+baobab
+base
+base-devel
+bash
+bash-completion
+bash-statemgr
+bat
+bc
+binutils
+bison
+blas
+bliss
+blueberry
+bluez
+bluez-libs
+bluez-tools
+bluez-utils
+bolt
+boost
+boost-libs
+borg
+bottom
+box2d
+brial
+bridge-utils
+brltty
+brotli
+btrfs-progs
+bubblewrap
+bzip2
+c-ares
+ca-certificates
+ca-certificates-mozilla
+ca-certificates-utils
+cairo
+cairomm
+cairomm-1.16
+cantarell-fonts
+cblas
+cddlib
+cdparanoia
+chromaprint
+cifs-utils
+cjson
+clang
+cliquer
+clucene
+cmake
+colord
+colord-gtk-common
+colord-gtk4
+colord-sane
+compiler-rt
+composefs
+confuse
+containerd
+coreutils
+cosmic-icon-theme
+coxeter
+cppdap
+cracklib
+cryptsetup
+cups
+cups-filters
+cups-pk-helper
+curl
+cython
+dav1d
+db
+db5.3
+dbus
+dbus-broker
+dbus-broker-units
+dbus-glib
+dconf
+debugedit
+default-cursors
+desktop-file-utils
+device-mapper
+diffutils
+djvulibre
+dmd
+dmenu
+dnssec-anchors
+docbook-xml
+docbook-xsl
+docker
+dotconf
+double-conversion
+dpkg
+duktape
+dunst
+dvisvgm
+e-antic
+e2fsprogs
+ecl
+eclib
+editorconfig-core-c
+efibootmgr
+efivar
+egl-wayland
+eglexternalplatform
+electron34
+elfutils
+ell
+enchant
+epiphany
+evince
+evolution-data-server
+execstack
+execstack-debug
+exempi
+exiv2
+expac
+expat
+faac
+faad2
+fakeroot
+fcitx5
+fd
+feh
+ffcall
+fflas-ffpack
+ffmpeg
+fftw
+file
+filesystem
+findutils
+flac
+flatpak
+flex
+flint
+fltk
+fluidsynth
+folks
+fontconfig
+fop
+fortitude-bin
+fplll
+fprintd
+freeglut
+freerdp
+freerdp2
+freetype2
+fribidi
+fuse-common
+fuse2
+fuse3
+fzf
+gawk
+gc
+gcc
+gcc-fortran
+gcc-libs
+gcr
+gcr-4
+gd
+gdbm
+gdk-pixbuf2
+gdm
+gdu
+geoclue
+geocode-glib-2
+geocode-glib-common
+gettext
+gf2x
+gfan
+ghostscript
+giac
+giflib
+git
+git-credential-manager
+git-lfs
+givaro
+gjs
+glib-networking
+glib2
+glib2-devel
+glib2-docs
+glibc
+glibmm
+glibmm-2.68
+glpk
+glslang
+glu
+glycin
+gmp
+gmp-ecm
+gnome-app-list
+gnome-autoar
+gnome-backgrounds
+gnome-bluetooth
+gnome-bluetooth-3.0
+gnome-calculator
+gnome-calendar
+gnome-characters
+gnome-clocks
+gnome-color-manager
+gnome-common
+gnome-connections
+gnome-console
+gnome-contacts
+gnome-control-center
+gnome-desktop
+gnome-desktop-4
+gnome-desktop-common
+gnome-disk-utility
+gnome-font-viewer
+gnome-keybindings
+gnome-keyring
+gnome-logs
+gnome-maps
+gnome-menus
+gnome-mimeapps
+gnome-music
+gnome-online-accounts
+gnome-remote-desktop
+gnome-session
+gnome-settings-daemon
+gnome-shell
+gnome-shell-extensions
+gnome-software
+gnome-system-monitor
+gnome-text-editor
+gnome-tour
+gnome-tweaks
+gnome-user-docs
+gnome-user-share
+gnome-weather
+gnu-free-fonts
+gnulib-l10n
+gnupg
+gnutls
+go
+gobject-introspection
+gobject-introspection-runtime
+gom
+google-chrome
+gparted
+gperftools
+gpgme
+gpm
+graphene
+graphite
+greetd
+greetd-agreety
+grep
+grilo
+grilo-plugins
+groff
+grub
+gsettings-desktop-schemas
+gsettings-system-schemas
+gsfonts
+gsl
+gsm
+gsound
+gspell
+gssdp
+gst-devtools-libs
+gst-editing-services
+gst-plugin-gtk
+gst-plugin-gtk4
+gst-plugin-pipewire
+gst-plugins-bad
+gst-plugins-bad-libs
+gst-plugins-base
+gst-plugins-base-libs
+gst-plugins-good
+gst-python
+gstreamer
+gstreamer0.10
+gstreamer0.10-base
+gstreamer0.10-base-debug
+gstreamer0.10-debug
+gtest
+gtk-doc
+gtk-update-icon-cache
+gtk-vnc
+gtk2
+gtk3
+gtk4
+gtkmm
+gtkmm-4.0
+gtkmm3
+gtksourceview3
+gtksourceview4
+gtksourceview5
+gucharmap
+guile
+gupnp
+gupnp-av
+gupnp-dlna
+gupnp-igd
+gvfs
+gvfs-afc
+gvfs-goa
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gzip
+harfbuzz
+harfbuzz-icu
+hicolor-icon-theme
+hidapi
+highway
+htop
+hunspell
+hwdata
+hwloc
+hyphen
+i3-resurrect
+i3-wm
+i3blocks
+i3lock
+i3status
+iana-etc
+ibus
+icu
+igraph
+iio-sensor-proxy
+ijs
+imagemagick
+imake
+imath
+iml
+imlib2
+intel-gmmlib
+intel-media-driver
+intel-ucode
+intltool
+iproute2
+iptables
+iputils
+ipython
+iso-codes
+itstool
+iwd
+jansson
+java-avalon-framework
+java-batik
+java-commons-io
+java-commons-logging
+java-environment-common
+java-runtime-common
+java-xmlgraphics-commons
+jbig2dec
+jbigkit
+jre-openjdk
+js115
+js128
+json-c
+json-glib
+jsoncpp
+jupyter-nbclient
+jupyter-nbconvert
+jupyter-nbformat
+jupyter-notebook-shim
+jupyter-server
+jupyterlab
+jupyterlab-pygments
+kbd
+kbd-br-thinkpad
+keyutils
+kmod
+krb5
+l-smash
+lame
+lapack
+lazygit
+lcalc
+lcms2
+ldb
+ldns
+leancrypto
+leptonica
+less
+libabw
+libadwaita
+libaio
+libao
+libappindicator-gtk3
+libarchive
+libass
+libassuan
+libasyncns
+libatasmart
+libatomic_ops
+libavc1394
+libavif
+libavtp
+libblockdev
+libblockdev-crypto
+libblockdev-fs
+libblockdev-loop
+libblockdev-mdraid
+libblockdev-nvme
+libblockdev-part
+libblockdev-swap
+libbluray
+libbpf
+libbraiding
+libbs2b
+libbsd
+libbytesize
+libcaca
+libcamera
+libcamera-ipa
+libcanberra
+libcap
+libcap-ng
+libcdio
+libcdio-paranoia
+libcdr
+libcloudproviders
+libcmis
+libcolord
+libcue
+libcups
+libcupsfilters
+libdaemon
+libdatrie
+libdbusmenu-glib
+libdbusmenu-gtk3
+libdc1394
+libdca
+libde265
+libdecor
+libdeflate
+libdisplay-info
+libdmapsharing
+libdovi
+libdrm
+libdv
+libdvdnav
+libdvdread
+libe-book
+libebur128
+libedataserverui4
+libedit
+libei
+libelf
+libepoxy
+libepubgen
+libetonyek
+libev
+libevdev
+libevent
+libexif
+libexttextcat
+libfabric
+libfdk-aac
+libffi
+libfontenc
+libfprint
+libfreeaptx
+libfreehand
+libgcrypt
+libgdata
+libgdm
+libgee
+libgexiv2
+libgirepository
+libgit2
+libglvnd
+libgme
+libgnomekbd
+libgoa
+libgpg-error
+libgphoto2
+libgrss
+libgsf
+libgtop
+libgudev
+libgusb
+libgweather-4
+libgxps
+libhandy
+libheif
+libhomfly
+libibus
+libical
+libice
+libid3tag
+libidn
+libidn2
+libiec61883
+libieee1284
+libimagequant
+libimobiledevice
+libimobiledevice-glue
+libinih
+libinput
+libinstpatch
+libiptcdata
+libisl
+libixion
+libjpeg-turbo
+libjxl
+libkate
+libksba
+liblangtag
+liblc3
+libldac
+libldap
+liblouis
+liblqr
+liblrdf
+libltc
+libluv
+libmalcontent
+libmanette
+libmd
+libmediaart
+libmicrodns
+libmm-glib
+libmnl
+libmodplug
+libmpc
+libmpcdec
+libmpdclient
+libmspack
+libmspub
+libmtp
+libmwaw
+libmysofa
+libmythes
+libnautilus-extension
+libndp
+libnet
+libnetfilter_conntrack
+libnewt
+libnfnetlink
+libnfs
+libnftnl
+libnghttp2
+libnghttp3
+libngtcp2
+libnice
+libnl
+libnm
+libnma
+libnma-common
+libnma-gtk4
+libnotify
+libnsl
+libnumbertext
+libnvme
+liboauth
+libodfgen
+libogg
+libomxil-bellagio
+libopenmpt
+liborcus
+libosinfo
+libp11-kit
+libpagemaker
+libpaper
+libpcap
+libpciaccess
+libpeas
+libpgm
+libphobos
+libphonenumber
+libpipewire
+libplacebo
+libplist
+libpng
+libportal
+libportal-gtk3
+libportal-gtk4
+libppd
+libproxy
+libpsl
+libpulse
+libpwquality
+libqalculate
+libqxp
+libraqm
+libraw1394
+libreoffice-still
+libreoffice-still-pt-br
+librest
+librevenge
+librsvg
+libsamplerate
+libsasl
+libseccomp
+libsecret
+libshout
+libshumate
+libsigc++
+libsigc++-3.0
+libsigsegv
+libsm
+libsndfile
+libsodium
+libsoup
+libsoup3
+libsoxr
+libspectre
+libspeechd
+libspelling
+libsrtp
+libssh
+libssh2
+libstaroffice
+libstemmer
+libsynctex
+libsysprof-capture
+libtasn1
+libteam
+libtermkey
+libthai
+libtheora
+libtiff
+libtirpc
+libtlsrpt
+libtommath
+libtool
+libunibreak
+libunistring
+libunwind
+liburing
+libusb
+libusbmuxd
+libutempter
+libutf8proc
+libuv
+libva
+libva-intel-driver
+libvdpau
+libverto
+libvisio
+libvisual
+libvisual-debug
+libvncserver
+libvorbis
+libvpl
+libvpx
+libvterm
+libwacom
+libwbclient
+libwebp
+libwireplumber
+libwnck3
+libwpd
+libwpe
+libwps
+libx11
+libxau
+libxaw
+libxcb
+libxcomposite
+libxcrypt
+libxcursor
+libxcvt
+libxdamage
+libxdg-basedir
+libxdmcp
+libxext
+libxfixes
+libxfont2
+libxft
+libxi
+libxinerama
+libxkbcommon
+libxkbcommon-x11
+libxkbfile
+libxklavier
+libxml2
+libxmlb
+libxmu
+libxpm
+libxrandr
+libxrender
+libxres
+libxshmfence
+libxslt
+libxss
+libxt
+libxtst
+libxv
+libxxf86vm
+libyaml
+libyuv
+libzmf
+licenses
+lightdm
+lightdm-gtk-greeter
+lilv
+linbox
+linux
+linux-api-headers
+linux-firmware
+linux-firmware-whence
+llhttp
+llvm
+llvm-libs
+lm_sensors
+lmdb
+localsearch
+log4cxx
+loupe
+lpsolve
+lrcalc
+lshw
+lsof
+lua
+lua51-lpeg
+luajit
+luit
+lv2
+lvm2
+lyx-debug
+lz4
+lzo
+m4
+m4ri
+m4rie
+make
+malcontent
+mallard-ducktype
+mandoc
+mariadb-libs
+mathjax
+maxima
+maxima-ecl
+maxima-fas
+mbedtls2
+mcqd
+md4c
+mdadm
+mesa
+meson
+migrate
+migrate-debug
+minizip
+mjpegtools
+mkinitcpio
+mkinitcpio-busybox
+mobile-broadband-provider-info
+mod_dnssd
+mpdecimal
+mpfi
+mpfr
+mpg123
+msgpack-c
+mtdev
+muparser
+mutter
+nano
+nautilus
+nauty
+ncurses
+neofetch
+neon
+net-snmp
+net-tools
+netstandard-targeting-pack
+nettle
+network-manager-applet
+networkmanager
+ninja
+nitrogen
+nm-connection-editor
+node-gyp
+nodejs
+nodejs-nopt
+normaliz
+noto-fonts
+noto-fonts-emoji
+npm
+npth
+nspr
+nss
+ntl
+numactl
+nvme-cli
+ocl-icd
+odin
+onedrive-abraunegg
+onedrive-abraunegg-debug
+oniguruma
+openal
+opencore-amr
+openexr
+openh264
+openjpeg2
+openmpi
+openpmix
+openssh
+openssl
+openucx
+opus
+orc
+orca
+os-prober
+osinfo-db
+ostree
+otf-aurulent-nerd
+otf-codenewroman-nerd
+otf-comicshanns-nerd
+otf-commit-mono-nerd
+otf-droid-nerd
+otf-fira-mono
+otf-fira-sans
+otf-firamono-nerd
+otf-geist-mono-nerd
+otf-hasklig-nerd
+otf-hermit-nerd
+otf-opendyslexic-nerd
+otf-overpass-nerd
+p11-kit
+pacman
+pacman-mirrorlist
+palp
+pam
+pambase
+pango
+pangomm
+pangomm-2.48
+pari
+pari-galdata
+pari-seadata-small
+parted
+patch
+patchelf
+pciutils
+pcre
+pcre2
+pcsclite
+perl
+perl-clone
+perl-common-sense
+perl-encode-locale
+perl-error
+perl-file-listing
+perl-html-parser
+perl-html-tagset
+perl-http-cookiejar
+perl-http-cookies
+perl-http-daemon
+perl-http-date
+perl-http-message
+perl-http-negotiate
+perl-io-html
+perl-json-xs
+perl-libwww
+perl-lwp-mediatypes
+perl-mailtools
+perl-net-http
+perl-timedate
+perl-try-tiny
+perl-types-serialiser
+perl-uri
+perl-www-robotrules
+perl-xml-parser
+pinentry
+pipewire
+pipewire-alsa
+pipewire-audio
+pipewire-jack
+pipewire-pulse
+pixman
+pkgconf
+planarity
+playerctl
+plfit
+polkit
+polybar
+pop-icon-theme
+pop-launcher
+pop-sound-theme
+poppler
+poppler-data
+poppler-glib
+popt
+portaudio
+postfix
+postfix-lmdb
+postfix-pgsql
+postgresql
+postgresql-libs
+potrace
+powertop
+ppl
+primecount
+primesieve
+procps-ng
+protobuf
+protobuf-c
+prrte
+psmisc
+pypy3
+pypy3-setuptools
+pyqt-builder
+pyright
+python
+python-annotated-types
+python-anyio
+python-argcomplete
+python-argon2-cffi
+python-argon2-cffi-bindings
+python-asttokens
+python-async-lru
+python-atspi
+python-attrs
+python-autocommand
+python-babel
+python-beautifulsoup4
+python-bleach
+python-build
+python-cairo
+python-certifi
+python-cffi
+python-charset-normalizer
+python-click
+python-colorama
+python-comm
+python-contourpy
+python-conway-polynomials
+python-cvxopt
+python-cycler
+python-cypari2
+python-cysignals
+python-dateutil
+python-dbus
+python-decorator
+python-defusedxml
+python-docutils
+python-exceptiongroup
+python-executing
+python-fastjsonschema
+python-fonttools
+python-fpylll
+python-gmpy2
+python-gobject
+python-greenlet
+python-h11
+python-httpcore
+python-httpx
+python-hypothesis
+python-i3ipc
+python-idna
+python-imagesize
+python-importlib-metadata
+python-inflect
+python-iniconfig
+python-installer
+python-ipykernel
+python-ipython-pygments-lexers
+python-ipywidgets
+python-jaraco.collections
+python-jaraco.context
+python-jaraco.functools
+python-jaraco.text
+python-jedi
+python-jinja
+python-json-logger
+python-json5
+python-jsonschema
+python-jsonschema-specifications
+python-jupyter-client
+python-jupyter-core
+python-jupyter-events
+python-jupyterlab-server
+python-kiwisolver
+python-lxml
+python-mako
+python-markdown
+python-markdown-it-py
+python-markupsafe
+python-matplotlib
+python-matplotlib-inline
+python-mdurl
+python-memory-allocator
+python-mistune
+python-more-itertools
+python-mpmath
+python-msgpack
+python-natsort
+python-nest-asyncio
+python-networkx
+python-numpy
+python-ordered-set
+python-outcome
+python-overrides
+python-packaging
+python-pandas
+python-pandocfilters
+python-parso
+python-pexpect
+python-pillow
+python-pkgconfig
+python-platformdirs
+python-pluggy
+python-ply
+python-pooch
+python-pplpy
+python-primecountpy
+python-prometheus_client
+python-prompt_toolkit
+python-psutil
+python-ptyprocess
+python-pure-eval
+python-pycparser
+python-pydantic
+python-pydantic-core
+python-pygments
+python-pynvim
+python-pyparsing
+python-pyproject-hooks
+python-pyqt5
+python-pyqt5-sip
+python-pyrsistent
+python-pyrsistent-debug
+python-pytest
+python-pytz
+python-pyxdg
+python-pyzmq
+python-referencing
+python-requests
+python-rich
+python-roman-numerals-py
+python-rpds-py
+python-rpy2
+python-ruamel-yaml
+python-ruamel.yaml.clib
+python-scipy
+python-send2trash
+python-setproctitle
+python-setuptools
+python-setuptools-scm
+python-six
+python-sniffio
+python-snowballstemmer
+python-sortedcontainers
+python-soupsieve
+python-sphinx
+python-sphinx-alabaster-theme
+python-sphinxcontrib-applehelp
+python-sphinxcontrib-devhelp
+python-sphinxcontrib-htmlhelp
+python-sphinxcontrib-jsmath
+python-sphinxcontrib-qthelp
+python-sphinxcontrib-serializinghtml
+python-stack-data
+python-sympy
+python-tinycss2
+python-tomli
+python-tornado
+python-tqdm
+python-traitlets
+python-trio
+python-trio-websocket
+python-trove-classifiers
+python-typeguard
+python-typing-inspection
+python-typing_extensions
+python-tzlocal
+python-uc-micro-py
+python-urllib3
+python-validate-pyproject
+python-wcwidth
+python-webencodings
+python-websocket-client
+python-wheel
+python-wsproto
+python-xlib
+python-yaml
+python-zipp
+qd
+qhull
+qpdf
+qrencode
+qt5-base
+qt5-svg
+qt5-tools
+qt5-translations
+qwt
+qwt5-qt5
+r
+rankwidth
+raptor
+rasqal
+rav1e
+readline
+redland
+rhash
+ripgrep
+rofi
+rofi-power-menu
+rsync
+rtkit
+rtmpdump
+rubberband
+runc
+rust
+rygel
+sane
+sbc
+sdl12-compat
+sdl2-compat
+sdl2_ttf
+sdl3
+seahorse
+seatd
+sed
+seer-gdb-debug
+semver
+serd
+shaderc
+shadow
+shared-mime-info
+shared_meataxe
+simdjson
+simple-scan
+singular
+sip
+sirocco
+slang
+smartmontools
+smbclient
+snappy
+snapshot
+sof-firmware
+sord
+sound-theme-freedesktop
+soundtouch
+spandsp
+speech-dispatcher
+speex
+speexdsp
+spirv-tools
+spotify-tui-debug
+sqlite
+sratom
+srt
+startup-notification
+stow
+sudo
+suitesparse
+sushi
+svt-av1
+svt-hevc
+switcheroo-control
+symmetrica
+sympow
+systemd
+systemd-libs
+systemd-sysvcompat
+tableplus
+tableplus-debug
+tachyon
+taglib
+talloc
+tar
+tcl
+tdb
+tecla
+tesseract
+tesseract-data-afr
+tesseract-data-best-por
+tesseract-data-eng
+tesseract-data-osd
+tevent
+texinfo
+texlive-basic
+texlive-bin
+texlive-latex
+texlive-latexextra
+texlive-latexrecommended
+texlive-pictures
+thin-provisioning-tools
+threejs-sage
+tinysparql
+tk
+tmux
+totem
+totem-pl-parser
+tpm2-tss
+tree-sitter
+tree-sitter-bash
+tree-sitter-c
+tree-sitter-lua
+tree-sitter-markdown
+tree-sitter-python
+tree-sitter-query
+tree-sitter-vim
+tree-sitter-vimdoc
+treedec
+tslib
+ttf-0xproto-nerd
+ttf-3270-nerd
+ttf-agave-nerd
+ttf-anonymouspro-nerd
+ttf-arimo-nerd
+ttf-bigblueterminal-nerd
+ttf-bitstream-vera-mono-nerd
+ttf-cascadia-code-nerd
+ttf-cascadia-mono-nerd
+ttf-cousine-nerd
+ttf-d2coding-nerd
+ttf-daddytime-mono-nerd
+ttf-dejavu-nerd
+ttf-envycoder-nerd
+ttf-fantasque-nerd
+ttf-firacode-nerd
+ttf-font-awesome
+ttf-go-nerd
+ttf-hack-nerd
+ttf-heavydata-nerd
+ttf-iawriter-nerd
+ttf-ibmplex-mono-nerd
+ttf-inconsolata-go-nerd
+ttf-inconsolata-lgc-nerd
+ttf-inconsolata-nerd
+ttf-intone-nerd
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
+ttf-lekton-nerd
+ttf-liberation
+ttf-liberation-mono-nerd
+ttf-lilex-nerd
+ttf-martian-mono-nerd
+ttf-meslo-nerd
+ttf-monofur-nerd
+ttf-monoid-nerd
+ttf-mononoki-nerd
+ttf-mplus-nerd
+ttf-nerd-fonts-symbols
+ttf-nerd-fonts-symbols-common
+ttf-nerd-fonts-symbols-mono
+ttf-opensans
+ttf-profont-nerd
+ttf-proggyclean-nerd
+ttf-roboto
+ttf-roboto-mono-nerd
+ttf-sharetech-mono-nerd
+ttf-sourcecodepro-nerd
+ttf-space-mono-nerd
+ttf-terminus-nerd
+ttf-tinos-nerd
+ttf-ubuntu-mono-nerd
+ttf-ubuntu-nerd
+ttf-victor-mono-nerd
+twolame
+tzdata
+uchardet
+udisks2
+unibilium
+unixodbc
+unzip
+upower
+uriparser
+usbmuxd
+util-linux
+util-linux-libs
+v4l-utils
+vapoursynth
+vid.stab
+vim
+vim-runtime
+vmaf
+volume_key
+vte-common
+vte4
+vulkan-headers
+vulkan-icd-loader
+vulkan-intel
+wavpack
+wayland
+wayland-protocols
+webkit2gtk
+webkit2gtk-4.1
+webkitgtk-6.0
+webrtc-audio-processing-0.3
+webrtc-audio-processing-1
+wezterm
+wget
+which
+wildmidi
+wireless_tools
+wireplumber
+woff2
+wpa_supplicant
+wpebackend-fdo
+wxwidgets-common
+wxwidgets-gtk3
+x264
+x265
+xapp
+xautolock
+xautolock-debug
+xbitmaps
+xcb-imdkit
+xcb-proto
+xcb-util
+xcb-util-cursor
+xcb-util-image
+xcb-util-keysyms
+xcb-util-renderutil
+xcb-util-wm
+xcb-util-xrm
+xclip
+xdg-dbus-proxy
+xdg-desktop-portal
+xdg-desktop-portal-gnome
+xdg-desktop-portal-gtk
+xdg-user-dirs
+xdg-user-dirs-gtk
+xdg-utils
+xdotool
+xf86-input-libinput
+xkeyboard-config
+xmlsec
+xmlto
+xorg-fonts-encodings
+xorg-server
+xorg-server-common
+xorg-setxkbmap
+xorg-xauth
+xorg-xdpyinfo
+xorg-xhost
+xorg-xinit
+xorg-xkbcomp
+xorg-xmodmap
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xset
+xorg-xwayland
+xorgproto
+xrandr-mgr
+xsel
+xterm
+xvidcore
+xxhash
+xz
+yajl
+yay
+yay-debug
+yelp
+yelp-tools
+yelp-xsl
+zbar
+zeromq
+zimg
+zip
+zix
+zlib
+zlib-ng
+zram-generator
+zsh
+zsh-syntax-highlighting
+zstd
+zvbi
+zxing-cpp
+zziplib

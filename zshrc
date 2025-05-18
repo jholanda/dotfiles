@@ -91,7 +91,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -104,7 +103,27 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
 
-alias vim="nvim"
-alias dev="cd ~/dev"
+alias prj="cd ~/dsv/projeto2025;conda activate projeto"
 alias conf="cd ~/.config"
+NVIM_APPNAME="kickstart-modular.nvim" nvim
 neofetch
+
+# export TESSDATA_PREFIX = /usr/share/tessdata/
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jholanda/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jholanda/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jholanda/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jholanda/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="$PATH:/home/jholanda/.modular/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

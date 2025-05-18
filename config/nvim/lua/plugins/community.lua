@@ -109,6 +109,9 @@ return {
       default_detail = 1
     },
   },
+  {
+    "lervag/vimtex",
+  },
 },
 
 
