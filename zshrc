@@ -103,10 +103,13 @@ source $ZSH/oh-my-zsh.sh
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 export FZF_DEFAULT_COMMAND="fd --type f"
 
-alias prj="cd ~/dsv/projeto2025;conda activate projeto"
+alias prj="cd ~/dsv/projeto2025;conda activate base"
 alias conf="cd ~/.config"
-NVIM_APPNAME="kickstart-modular.nvim" nvim
+#NVIM_APPNAME="kickstart-modular.nvim" nvim
 neofetch
+setxkbmap -option caps:escape
+
+
 
 # export TESSDATA_PREFIX = /usr/share/tessdata/
 # >>> conda initialize >>>
@@ -127,3 +130,5 @@ unset __conda_setup
 
 export PATH="$PATH:/home/jholanda/.modular/bin"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
