@@ -73,7 +73,6 @@ ZSH_THEME="random"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -109,6 +108,12 @@ alias conf="cd ~/.config"
 neofetch
 setxkbmap -option caps:escape
 
+setopt HIST_EXPIRE_DUPS_FIRST  # Expire dup event first when trimming hist
+setopt HIST_FIND_NO_DUPS       # Do not display previously found event
+setopt HIST_IGNORE_ALL_DUPS    # Delete old event if new is dup
+setopt HIST_IGNORE_DUPS        # Do not record consecutive dup events
+setopt HIST_IGNORE_SPACE       # Do not record event starting with a space
+setopt HIST_SAVE_NO_DUPS       # Do not write dup event to hist file
 
 
 # export TESSDATA_PREFIX = /usr/share/tessdata/
@@ -128,7 +133,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+export PATH="$PATH:/home/jholanda/.local/bin"
 export PATH="$PATH:/home/jholanda/.modular/bin"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=1
+
+source $ZSH/oh-my-zsh.sh
