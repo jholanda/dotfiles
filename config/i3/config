@@ -1,6 +1,6 @@
 set $mod Mod4
 
-font pango:JetBrainsMono 14
+font pango:JetBrainsMono 10
 #for_window [class="^.*"] border pixel 5
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -20,7 +20,7 @@ exec --no-startup-id xautolock -time 60 -locker "systemctl suspend"
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
-exec --no-startup-id nm-appletset clipboard=unnamedplus
+exec --no-startup-id nm-appletset 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -182,7 +182,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Wallpaper
-exec --no-startup-id feh --randomize --bg-scale --zoom fill ~/Imagens/wallpaper
+exec --no-startup-id feh --randomize --bg-scale --zoom fill ~/Imagens/Wallpaper
 
 #screenshot
 bindsym Print exec flameshot gui
