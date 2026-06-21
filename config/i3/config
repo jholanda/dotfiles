@@ -1,8 +1,8 @@
 set $mod Mod4
 
 font pango:JetBrainsMono 10
-#for_window [class="^.*"] border pixel 5
-
+for_window [class="*.*"] border pixel 0 
+gaps top 40
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -37,7 +37,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id wezterm
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -182,7 +182,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Wallpaper
-exec --no-startup-id feh --randomize --bg-scale --zoom fill ~/Imagens/Wallpaper
+exec --no-startup-id feh --randomize --bg-scale ~/Imagens/Wallpapers
 
 #screenshot
 bindsym Print exec flameshot gui
@@ -190,5 +190,5 @@ bindsym Print exec flameshot gui
 #polybar launch
 exec_always --no-startup-id ~/.config/i3/launch-polybar.sh &
 
-
-
+#clipboard
+exec --no-startup-id xclip -selection clipboard -loops 0
