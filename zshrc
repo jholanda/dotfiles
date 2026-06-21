@@ -49,37 +49,9 @@ export LC_CTYPE="pt_BR.UTF-8"
 source $ZSH/oh-my-zsh.sh
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jholanda/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/jholanda/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jholanda/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/jholanda/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
 
+# cache do uv na share (p8): alivia a raiz + restaura hardlink
+export UV_CACHE_DIR="$HOME/share/.cache/uv"
 
-
-# 1. Autocompletar e ganchos de ferramentas
-eval "$(direnv hook zsh)"
-eval "$(uv generate-shell-completion zsh)"
-
-prompt_virtualenv() {
-  if [[ -n "$VIRTUAL_ENV" ]]; then
-    local venv_name=$(basename "$VIRTUAL_ENV")
-    if [[ "$venv_name" == ".venv" ]]; then
-      venv_name=$(basename "$(dirname "$VIRTUAL_ENV")")
-    fi
-    # Usando o caractere nf-fa-python (padrão Nerd Font) que o Alacritty vai ler 100%
-    prompt_segment blue black "󱔎 $venv_name"
-  fi
-}
-export PATH="$HOME/.local/bin:$PATH"
-
-# Reescaneia pacotes AUR contra a lista do Atomic Arch
+# reescaneia pacotes AUR contra a lista do Atomic Arch
 alias aurscan='git -C ~/aur-malware-check pull --quiet && comm -12 <(pacman -Qmq | sort) <(sort ~/aur-malware-check/package_list.txt) | grep . && echo "⚠️  pacotes acima estão na lista de comprometidos" || echo "✓ limpo — nenhum pacote AUR comprometido"'
