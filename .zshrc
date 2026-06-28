@@ -56,3 +56,5 @@ export UV_CACHE_DIR="$HOME/share/.cache/uv"
 
 # reescaneia pacotes AUR contra a lista do Atomic Arch
 alias aurscan='git -C ~/aur-malware-check pull --quiet && comm -12 <(pacman -Qmq | sort) <(sort ~/aur-malware-check/package_list.txt) | grep . && echo "⚠️  pacotes acima estão na lista de comprometidos" || echo "✓ limpo — nenhum pacote AUR comprometido"'
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
