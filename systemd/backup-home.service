@@ -1,0 +1,14 @@
+[Unit]
+Description=Backup diário de home jholanda
+After=local-fs.target
+# Só faz sentido em máquinas com um destino de backup dedicado montado
+# (ex.: pc-arch, /mnt/backup). Ver bin/atualiza-backup.sh.
+ConditionPathIsMountPoint=/mnt/backup
+
+[Service]
+Type=oneshot
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/home/jholanda/bin/atualiza-backup.sh
+
+[Install]
+WantedBy=multi-user.target

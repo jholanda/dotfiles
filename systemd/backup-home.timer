@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup diário de home jholanda
+
+[Timer]
+OnCalendar=daily
+Persistent=true
+
+[Install]
+WantedBy=timers.target
