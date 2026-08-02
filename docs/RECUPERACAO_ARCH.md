@@ -50,47 +50,36 @@ rsync -aAXHv \
 
 ---
 
-# 3. Restaurar pacotes
+# 3. Dotfiles + pacotes + automação de backup
 
-Lista em `/mnt/backup/system/pkglist.txt` (pacotes oficiais).
-Lista AUR em `/mnt/backup/system/aur.txt` (instalar manualmente depois).
-
-Instalar pacotes oficiais:
-
-```bash
-pacman -S --needed - < /mnt/backup/system/pkglist.txt
-```
-
----
-
-# 4. Dotfiles + automação de backup
-
-Tudo num repo só:
+Tudo num repo só (inclusive a lista de pacotes, `pkg/pkglist.txt` e
+`pkg/aur.txt` — não depende mais de `/mnt/backup`, que só existe na pc-arch):
 
 ```bash
 git clone git@github.com:jholanda/dotfiles.git ~/dotfiles
-```
-
-Aplicar dotfiles (config/, .local/, zshrc, wezterm.lua, xkb/) como sempre —
-copiar/ajustar manualmente para o home.
-
-Instalar scripts + (se for a pc-arch) o timer de backup:
-
-```bash
 cd ~/dotfiles
 ./install.sh
 ```
 
-O `install.sh` detecta o hostname:
-- `pc-arch` → linka `~/bin/atualiza-backup.sh` ao script do repo **e** instala
-  o timer systemd de backup diário.
-- qualquer outro host (ex.: notebook) → linka só o script, sem timer. Use
-  `./install.sh --with-backup` se essa outra máquina também tiver um destino
-  de backup dedicado, ou `--no-backup` para forçar o contrário.
+Aplicar dotfiles (config/, .local/, zshrc, wezterm.lua, xkb/) como sempre —
+copiar/ajustar manualmente para o home (isso `install.sh` ainda não faz).
+
+O `install.sh`:
+1. Instala os pacotes oficiais de `pkg/pkglist.txt` (`pacman -S --needed`) e
+   lista os pacotes AUR de `pkg/aur.txt` para instalação manual. Pule com
+   `--no-packages`.
+2. Linka `~/bin/atualiza-backup.sh` ao script do repo.
+3. Detecta o hostname: na `pc-arch` também instala o timer systemd de backup
+   diário; em qualquer outro host (ex.: notebook), pula essa parte. Force
+   com `--with-backup` / `--no-backup`.
+
+`pkg/pkglist.txt` e `pkg/aur.txt` só ficam atualizados até a data do último
+`git push` feito depois de um backup na pc-arch — não são regenerados
+automaticamente no clone.
 
 ---
 
-# 5. Montagem automática do backup (pc-arch)
+# 4. Montagem automática do backup (pc-arch)
 
 A partição de backup precisa estar no `/etc/fstab` com `nofail`, senão o
 timer roda e o script escreve num diretório qualquer do disco raiz sem
@@ -108,7 +97,7 @@ e aborta em vez de escrever no lugar errado.
 
 ---
 
-# 6. Snapper
+# 5. Snapper
 
 Instalar e configurar:
 
@@ -132,7 +121,7 @@ NUMBER_LIMIT_IMPORTANT=5
 
 ---
 
-# 7. Pós-instalação
+# 6. Pós-instalação
 
 Verificar:
 - rede
