@@ -1,0 +1,9 @@
+[Unit]
+Description=Backup diário de home jholanda
+# Só faz sentido em máquinas com destino de backup dedicado montado
+# (hoje: só a pc-arch, em /mnt/backup). Ver bin/atualiza-backup.sh.
+ConditionPathIsMountPoint=/mnt/backup
+
+[Service]
+Type=oneshot
+ExecStart=%h/bin/atualiza-backup.sh

@@ -5,30 +5,39 @@ Configuração e automação das minhas máquinas Arch (pc-arch e notebook).
 ## Estrutura
 
 ```
-config/    dotfiles de aplicativos (i3, polybar, rofi) — aplicados manualmente
-.local/    binários pessoais (~/.local/bin)
-xkb/       layout de teclado customizado
-wezterm.lua, zshrc
-bin/       scripts de sistema (hoje: backup). Linkados em ~/bin por install.sh
-systemd/   units de automação (hoje: timer diário de backup)
+home/      pacote stow — espelha $HOME. Tudo aqui vira symlink real.
+  .config/       i3, polybar, rofi, xkb (só pc-arch), alacritty, lazyvim,
+                 systemd/user (backup.{service,timer}, onedrive só notebook)
+  .local/bin/    binários pessoais (dbeaver, pycharm, etc. — só pc-arch)
+  .zshrc
+  bin/           scripts de sistema (hoje: atualiza-backup.sh)
 pkg/       snapshot de pacotes oficiais instalados (pkglist.txt)
 docs/      guia de recuperação/restauração completo (RECUPERACAO_ARCH.md)
-install.sh instala pacotes, bin/ e systemd/ (backup) adaptado à máquina
+install.sh instala pacotes, dá stow em home/ e (se fizer sentido) ativa o
+           timer de backup — tudo adaptado à máquina
 ```
 
 Sem AUR/yay — só pacotes oficiais do repositório do pacman.
 
-`pkg/pkglist.txt` é atualizado automaticamente toda vez que
-`bin/atualiza-backup.sh` roda na pc-arch (ele copia de `/mnt/backup/system/`
-pra dentro do repo). Isso não commita nem dá push sozinho — quando quiser que
-o notebook fique com o mesmo conjunto de pacotes, é só `git add/commit/push`
-esse arquivo e rodar `install.sh` de novo do outro lado.
+Nem toda pasta de `home/.config/` se aplica às duas máquinas (ex.: `xkb/`
+é só da pc-arch — teclado US customizado; o notebook é ABNT2 nativo.
+`onedrive.service*` é só do notebook). Isso é normal: dar stow no repo
+inteiro em qualquer uma das máquinas só cria symlinks a mais que nunca são
+usados — não tem efeito colateral.
 
-Antes disso, backup ficava dividido entre `~/bin` e `/mnt/backup` (script
-num lugar, systemd units só em `/etc`, guia de recuperação só na própria
-partição de backup — nada disso versionado). Agora tudo isso é gerenciado
-por este repo; `/mnt/backup` é só o destino dos dados gerados pelo backup
-(home sincronizado + listas de pacotes), nunca fonte de scripts/config.
+`pkg/pkglist.txt` é atualizado automaticamente toda vez que
+`home/bin/atualiza-backup.sh` roda na pc-arch (ele copia de
+`/mnt/backup/system/` pra dentro do repo). Isso não commita nem dá push
+sozinho — quando quiser que o notebook fique com o mesmo conjunto de
+pacotes, é só `git add/commit/push` esse arquivo e rodar `install.sh` de
+novo do outro lado.
+
+Antes disso, isso tudo ficava espalhado: parte em `~/bin`, parte em
+`/mnt/backup` (script num lugar, systemd units de sistema só em `/etc`,
+guia de recuperação só na própria partição de backup — nada versionado),
+e a pc-arch usava `config/` solto enquanto o notebook já tinha migrado pra
+`.config/` de verdade com stow. Agora é tudo este repo só; `/mnt/backup` é
+só o destino dos dados gerados pelo backup, nunca fonte de scripts/config.
 
 ## Uso numa máquina nova
 
@@ -38,15 +47,16 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-`install.sh` detecta o hostname:
-- **pacotes**: instalados em qualquer host, a partir de `pkg/pkglist.txt`
-  via `pacman -S --needed` (só oficiais, sem AUR). Pule com `--no-packages`.
-- **pc-arch**: linka `~/bin/atualiza-backup.sh` ao script do repo e instala
-  o timer systemd de backup diário para `/mnt/backup`.
-- **qualquer outro host** (ex.: notebook): linka só o script, sem o timer
-  (não tem destino de backup dedicado). Force com `--with-backup` /
-  `--no-backup` se quiser outro comportamento.
+`install.sh`:
+1. Instala os pacotes oficiais de `pkg/pkglist.txt` (`pacman -S --needed`).
+   Pule com `--no-packages`.
+2. Dá `stow` em `home/` — symlinks reais de `.config/`, `.zshrc`, `.local/`
+   e `bin/` pra dentro de `$HOME` (instala o pacote `stow` se faltar). Pule
+   com `--no-dotfiles`.
+3. Detecta o hostname: na `pc-arch` também ativa o timer systemd **`--user`**
+   (sem sudo) de backup diário; em qualquer outro host (ex.: notebook), pula
+   essa parte, porque não tem destino de backup dedicado. Force com
+   `--with-backup` / `--no-backup`.
 
-Dotfiles de config (`config/`, `.local/`, `zshrc`, `wezterm.lua`, `xkb/`)
-continuam aplicados manualmente por enquanto — ver `docs/RECUPERACAO_ARCH.md`
-para o passo a passo completo de restauração de uma máquina do zero.
+Ver `docs/RECUPERACAO_ARCH.md` para o passo a passo completo de restauração
+de uma máquina do zero (discos, pacotes, backup, snapper).

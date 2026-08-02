@@ -52,9 +52,9 @@ rsync -aAXHv \
 
 # 3. Dotfiles + pacotes + automação de backup
 
-Tudo num repo só (inclusive a lista de pacotes, `pkg/pkglist.txt` — só
-oficiais, sem AUR/yay — não depende mais de `/mnt/backup`, que só existe na
-pc-arch):
+Tudo num repo só — inclusive dotfiles (via stow, pacote `home/`) e a lista
+de pacotes (`pkg/pkglist.txt`, só oficiais, sem AUR/yay). Nada disso depende
+de `/mnt/backup`, que só existe na pc-arch:
 
 ```bash
 git clone git@github.com:jholanda/dotfiles.git ~/dotfiles
@@ -62,16 +62,19 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-Aplicar dotfiles (config/, .local/, zshrc, wezterm.lua, xkb/) como sempre —
-copiar/ajustar manualmente para o home (isso `install.sh` ainda não faz).
-
 O `install.sh`:
 1. Instala os pacotes oficiais de `pkg/pkglist.txt` (`pacman -S --needed`).
    Pule com `--no-packages`.
-2. Linka `~/bin/atualiza-backup.sh` ao script do repo.
-3. Detecta o hostname: na `pc-arch` também instala o timer systemd de backup
-   diário; em qualquer outro host (ex.: notebook), pula essa parte. Force
-   com `--with-backup` / `--no-backup`.
+2. Dá `stow` no pacote `home/` — cria os symlinks reais de `.config/`,
+   `.zshrc`, `.local/` e `bin/` dentro de `$HOME` (instala o pacote `stow`
+   se não tiver). Pule com `--no-dotfiles`.
+3. Detecta o hostname: na `pc-arch` também ativa o timer systemd **`--user`**
+   (sem sudo) de backup diário; em qualquer outro host (ex.: notebook),
+   pula essa parte. Force com `--with-backup` / `--no-backup`.
+
+Nem tudo em `home/.config/` se aplica a toda máquina (`xkb/` é só da
+pc-arch — teclado US customizado, o notebook é ABNT2; `onedrive.service*`
+é só do notebook) — sem problema, symlink de config não usada é inofensivo.
 
 `pkg/pkglist.txt` só fica atualizado até a data do último `git push` feito
 depois de um backup na pc-arch — não é regenerado automaticamente no clone.
@@ -90,9 +93,11 @@ UUID=5bded178-fce7-4d9d-853b-0fdace47d09f  /mnt/backup  btrfs  defaults,nofail  
 ```
 
 Depois de editar, rodar `sudo mount -a` e conferir com `findmnt /mnt/backup`.
+Esse passo continua precisando de sudo (é `/etc/fstab`, sistema); o timer de
+backup em si (systemd `--user`) não precisa mais.
 
-O próprio `bin/atualiza-backup.sh` também confere isso sozinho (`mountpoint -q`)
-e aborta em vez de escrever no lugar errado.
+O próprio `home/bin/atualiza-backup.sh` também confere isso sozinho
+(`mountpoint -q`) e aborta em vez de escrever no lugar errado.
 
 ---
 
@@ -147,28 +152,30 @@ Verificar:
 
 ## Automação
 
-Serviço e timer de sistema (root), instalados por `install.sh` a partir de
-`systemd/` neste repo, disparam diariamente:
+Timer systemd **`--user`** (sem root), ativado por `install.sh` a partir de
+`home/.config/systemd/user/backup.{service,timer}`, dispara diariamente:
 
 ```bash
 # Ver status do timer
-sudo systemctl list-timers backup-home.timer
+systemctl --user list-timers backup.timer
 
 # Rodar backup manualmente
-sudo systemctl start backup-home.service
-sudo systemctl status backup-home.service
+systemctl --user start backup.service
+systemctl --user status backup.service
 
 # Logs
-journalctl -u backup-home.service
+journalctl --user -u backup.service
 ```
 
-Fonte de verdade dos arquivos do serviço (editar aqui, não em `/etc` direto):
-- `systemd/backup-home.service`
-- `systemd/backup-home.timer`
-- Script: `bin/atualiza-backup.sh`
+Fonte de verdade dos arquivos do serviço (editar aqui, não em
+`~/.config/systemd/user/` direto — lá é só o symlink do stow):
+- `home/.config/systemd/user/backup.service`
+- `home/.config/systemd/user/backup.timer`
+- Script: `home/bin/atualiza-backup.sh`
 
-Depois de editar qualquer um desses, rodar `./install.sh` de novo para
-reinstalar.
+Depois de editar qualquer um desses, rodar `./install.sh` de novo (o stow
+já resolve o symlink; só precisa de `systemctl --user daemon-reload` se
+mudou o `.service`/`.timer`, o que `install.sh` já faz).
 
 ## Backup manual (rsync direto)
 
