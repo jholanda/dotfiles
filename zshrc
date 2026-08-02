@@ -20,6 +20,7 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 alias conf="cd ~/.config"
 alias exe="cd ~/share/fontes/exercism/python"
 alias arco="cd ~/share/fontes/senado/arco"
+alias clipboard='xclip -selection clipboard'
 
 # 1. Abre com a configuração do kickstart-modular.nvim
 alias lvim='NVIM_APPNAME=lazyvim \nvim'

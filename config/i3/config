@@ -97,7 +97,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
 set $ws2 "2"
-set $ws3 "3"
+set $ws3 "3" 
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -136,16 +136,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+Shift+q exec "$bin_path/dmenu-i3-logout"
-
-
-mode "exit" {
-  bindsym l exec i3-msg exit
-  bindsym r exec systemctl reboot
-  bindsym s exec systemctl shutdown
-  bindsym Escape mode "default"
-  bindsym Return mode "default"
-}
-bindsym $mod+x mode "exit"
 
 #bindsym $mod+x exec i3-nagbar -f "pango:Terminus 12" \
 #-m "Exit i3? This will end your current X session." \
@@ -186,6 +176,9 @@ exec --no-startup-id feh --randomize --bg-scale ~/Imagens/Wallpapers
 
 #screenshot
 bindsym Print exec flameshot gui
+
+#clipar clipboard
+bindsym $mod+c exec --no-startup-id xclip -selection clipboard
 
 #polybar launch
 exec_always --no-startup-id ~/.config/i3/launch-polybar.sh &
