@@ -52,8 +52,9 @@ rsync -aAXHv \
 
 # 3. Dotfiles + pacotes + automação de backup
 
-Tudo num repo só (inclusive a lista de pacotes, `pkg/pkglist.txt` e
-`pkg/aur.txt` — não depende mais de `/mnt/backup`, que só existe na pc-arch):
+Tudo num repo só (inclusive a lista de pacotes, `pkg/pkglist.txt` — só
+oficiais, sem AUR/yay — não depende mais de `/mnt/backup`, que só existe na
+pc-arch):
 
 ```bash
 git clone git@github.com:jholanda/dotfiles.git ~/dotfiles
@@ -65,17 +66,15 @@ Aplicar dotfiles (config/, .local/, zshrc, wezterm.lua, xkb/) como sempre —
 copiar/ajustar manualmente para o home (isso `install.sh` ainda não faz).
 
 O `install.sh`:
-1. Instala os pacotes oficiais de `pkg/pkglist.txt` (`pacman -S --needed`) e
-   lista os pacotes AUR de `pkg/aur.txt` para instalação manual. Pule com
-   `--no-packages`.
+1. Instala os pacotes oficiais de `pkg/pkglist.txt` (`pacman -S --needed`).
+   Pule com `--no-packages`.
 2. Linka `~/bin/atualiza-backup.sh` ao script do repo.
 3. Detecta o hostname: na `pc-arch` também instala o timer systemd de backup
    diário; em qualquer outro host (ex.: notebook), pula essa parte. Force
    com `--with-backup` / `--no-backup`.
 
-`pkg/pkglist.txt` e `pkg/aur.txt` só ficam atualizados até a data do último
-`git push` feito depois de um backup na pc-arch — não são regenerados
-automaticamente no clone.
+`pkg/pkglist.txt` só fica atualizado até a data do último `git push` feito
+depois de um backup na pc-arch — não é regenerado automaticamente no clone.
 
 ---
 
@@ -140,8 +139,8 @@ Verificar:
 
 | Arquivo | Conteúdo |
 |---|---|
-| `pkglist.txt` | Pacotes oficiais instalados |
-| `aur.txt` | Pacotes AUR instalados |
+| `pkglist.txt` | Pacotes oficiais instalados (também copiado pra `pkg/` no repo) |
+| `aur.txt` | Pacotes fora dos repos oficiais — só diagnóstico, deve ficar vazio (sem AUR/yay em uso); não é copiado pro repo nem instalado por `install.sh` |
 | `discos.txt` | Layout de discos (lsblk -f) |
 | `btrfs.txt` | Subvolumes Btrfs |
 | `last-backup.txt` | Data do último backup |

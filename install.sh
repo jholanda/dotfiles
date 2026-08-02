@@ -43,10 +43,6 @@ echo "Host: $HOST"
 if [ "$WITH_PACKAGES" = "1" ]; then
   echo "-> Instalando pacotes oficiais (pkg/pkglist.txt)..."
   sudo pacman -S --needed - <"$DOTFILES_DIR/pkg/pkglist.txt"
-  if [ -s "$DOTFILES_DIR/pkg/aur.txt" ]; then
-    echo "-> Pacotes AUR (instale manualmente com seu helper, ex. yay -S <pacote>):"
-    cat "$DOTFILES_DIR/pkg/aur.txt"
-  fi
 else
   echo "-> Pulando instalação de pacotes."
 fi

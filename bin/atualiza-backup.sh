@@ -31,13 +31,13 @@ pacman -Qqm >"$BACKUP_ROOT/system/aur.txt"
 btrfs subvolume list / >"$BACKUP_ROOT/system/btrfs.txt" 2>/dev/null || findmnt -t btrfs >"$BACKUP_ROOT/system/btrfs.txt"
 date >"$BACKUP_ROOT/system/last-backup.txt"
 
-# Mantém a lista de pacotes versionada no repo também (pra outras máquinas
-# rodarem `install.sh --packages` e ficarem com o mesmo conjunto instalado).
+# Mantém a lista de pacotes oficiais versionada no repo também (pra outras
+# máquinas rodarem `install.sh` e ficarem com o mesmo conjunto instalado).
 # Não commita/dá push sozinho — isso fica pro seu fluxo normal de git.
+# aur.txt fica só no destino de backup (diagnóstico), sem AUR helper em uso.
 DOTFILES_PKG_DIR="$HOME/dotfiles/pkg"
 if [ -d "$DOTFILES_PKG_DIR" ]; then
   cp "$BACKUP_ROOT/system/pkglist.txt" "$DOTFILES_PKG_DIR/pkglist.txt"
-  cp "$BACKUP_ROOT/system/aur.txt" "$DOTFILES_PKG_DIR/aur.txt"
 fi
 
 # Sincroniza home
